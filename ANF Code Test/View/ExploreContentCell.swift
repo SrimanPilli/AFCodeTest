@@ -131,37 +131,14 @@ class ExploreContentCell: UITableViewCell {
     // Configure
     
     func configure(with card: ProductCard) {
+        if let bgImage = card.backgroundImage {
+            loadBackgroundImage(from: bgImage)
+        }
         topDescriptionLabel.text = card.topDescription?.uppercased() ?? ""
         topDescriptionLabel.font = UIFont.systemFont(ofSize: 13)
         
         titleLabel.text = card.title
         titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
-        
-        
-//        if let data = card.imageData {
-//                backgroundImageView.image = UIImage(data: data)
-//            } else {
-//                backgroundImageView.image = nil // placeholder if needed
-//            }
-//            
-        if let data = card.imageData, let image = UIImage(data: data) {
-            backgroundImageView.image = image
-            
-            // Adjust imageView height dynamically based on image aspect ratio
-            let aspectRatio = image.size.height / image.size.width
-            imageHeightConstraint?.isActive = false
-            imageHeightConstraint = backgroundImageView.heightAnchor.constraint(equalTo: backgroundImageView.widthAnchor, multiplier: aspectRatio)
-            imageHeightConstraint?.isActive = true
-            
-            // Notify table to recalc height
-            if let tableView = self.superview as? UITableView {
-                tableView.beginUpdates()
-                tableView.endUpdates()
-            }
-            
-        } else {
-            backgroundImageView.image = nil
-        }
         
         promoMessageLabel.text = card.promoMessage ?? ""
         promoMessageLabel.isHidden = card.promoMessage == nil
@@ -181,6 +158,7 @@ class ExploreContentCell: UITableViewCell {
         content?.forEach { item in
             let button = UIButton(type: .system)
             button.setTitle(item.title, for: .normal)
+            button.setTitleColor(.black, for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             button.accessibilityHint = item.target
             button.addTarget(self, action: #selector(contentButtonTapped), for: .touchUpInside)
@@ -188,9 +166,9 @@ class ExploreContentCell: UITableViewCell {
             button.setContentHuggingPriority(.required, for: .vertical)
             button.setContentCompressionResistancePriority(.required, for: .vertical)
             
-            button.layer.borderColor = UIColor.gray.cgColor
+            button.layer.borderColor = UIColor.black.cgColor
             button.layer.borderWidth = 1
-            button.layer.cornerRadius = 8
+            button.layer.cornerRadius = 1
             button.clipsToBounds = true
             
             contentStackView.addArrangedSubview(button)
@@ -219,11 +197,6 @@ class ExploreContentCell: UITableViewCell {
                 )
                 self.imageHeightConstraint?.priority = .required
                 self.imageHeightConstraint?.isActive = true
-                
-                UIView.animate(withDuration: 0.3) {
-                    self.contentView.layoutIfNeeded()
-                    self.backgroundImageView.alpha = 1.0
-                }
                 
                 self.contentView.setNeedsLayout()
                 self.contentView.layoutIfNeeded()

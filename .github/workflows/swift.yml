@@ -1,0 +1,50 @@
+# iOS Build and Test Workflow
+# Builds and tests an iOS app using Xcode on macOS runners
+
+name: iOS Build & Test
+
+on:
+  push:
+    branches: [ "0000-AFCodingTest" ]
+  pull_request:
+    branches: [ "0000-AFCodingTest" ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Select latest Xcode
+      run: sudo xcode-select -s /Applications/Xcode.app
+
+    # Optional: cache derived data for faster builds
+    - name: Cache DerivedData
+      uses: actions/cache@v4
+      with:
+        path: ~/Library/Developer/Xcode/DerivedData
+        key: ${{ runner.os }}-deriveddata-${{ hashFiles('**/*.xcodeproj', '**/*.xcworkspace', '**/Podfile.lock') }}
+
+    # Build the app (change scheme/workspace names accordingly)
+    - name: Build iOS App
+      run: |
+        xcodebuild \
+          -workspace "ANF Code Test.xcworkspace" \
+          -scheme "ANF Code Test" \
+          -sdk iphonesimulator \
+          -configuration Debug \
+          -destination 'platform=iOS Simulator,name=iPhone 15' \
+          build | xcpretty
+
+    # Run tests (if you have unit/UI tests)
+    - name: Run Tests
+      run: |
+        xcodebuild \
+          -workspace "ANF Code Test.xcworkspace" \
+          -scheme "ANF Code Test" \
+          -sdk iphonesimulator \
+          -destination 'platform=iOS Simulator,name=iPhone 15' \
+          test | xcpretty
+

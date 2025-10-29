@@ -10,10 +10,11 @@
 		0C4AF3672EAFD45E0033E19F /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AF3662EAFD45E0033E19F /* ProductCard.swift */; };
 		0C4AF3692EAFD7410033E19F /* ProductCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AF3682EAFD7410033E19F /* ProductCardService.swift */; };
 		0C4AF36B2EAFE8910033E19F /* ExploreContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AF36A2EAFE8910033E19F /* ExploreContentCell.swift */; };
+		0CE049A62EB1F4E3006BAD0C /* ProductCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE049A52EB1F4E3006BAD0C /* ProductCardViewModel.swift */; };
+		0CE049AA2EB1F998006BAD0C /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE049A92EB1F998006BAD0C /* AppDependencyContainer.swift */; };
 		3E4AB93A2676D86100C79456 /* exploreData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E4AB9392676D86100C79456 /* exploreData.json */; };
 		3E727ED326727088006C11AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E727ED226727088006C11AC /* AppDelegate.swift */; };
 		3E727ED526727088006C11AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E727ED426727088006C11AC /* SceneDelegate.swift */; };
-		3E727EDA26727088006C11AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E727ED826727088006C11AC /* Main.storyboard */; };
 		3E727EDC2672708B006C11AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E727EDB2672708B006C11AC /* Assets.xcassets */; };
 		3E727EDF2672708B006C11AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E727EDD2672708B006C11AC /* LaunchScreen.storyboard */; };
 		3E727EEA2672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E727EE92672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift */; };
@@ -34,11 +35,12 @@
 		0C4AF3662EAFD45E0033E19F /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		0C4AF3682EAFD7410033E19F /* ProductCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardService.swift; sourceTree = "<group>"; };
 		0C4AF36A2EAFE8910033E19F /* ExploreContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreContentCell.swift; sourceTree = "<group>"; };
+		0CE049A52EB1F4E3006BAD0C /* ProductCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViewModel.swift; sourceTree = "<group>"; };
+		0CE049A92EB1F998006BAD0C /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		3E4AB9392676D86100C79456 /* exploreData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exploreData.json; sourceTree = "<group>"; };
 		3E727ECF26727088006C11AC /* ANF Code Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ANF Code Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E727ED226727088006C11AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E727ED426727088006C11AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3E727ED926727088006C11AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E727EDB2672708B006C11AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E727EDE2672708B006C11AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E727EE02672708B006C11AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +68,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CE049A22EB1F477006BAD0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AF3662EAFD45E0033E19F /* ProductCard.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0CE049A32EB1F4AF006BAD0C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AF3682EAFD7410033E19F /* ProductCardService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0CE049A42EB1F4C3006BAD0C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0CE049A52EB1F4E3006BAD0C /* ProductCardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0CE049A72EB1F4EA006BAD0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AF36A2EAFE8910033E19F /* ExploreContentCell.swift */,
+				3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0CE049A82EB1F95C006BAD0C /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				0CE049A92EB1F998006BAD0C /* AppDependencyContainer.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
 		3E727EC626727088006C11AC = {
 			isa = PBXGroup;
 			children = (
@@ -87,17 +130,17 @@
 		3E727ED126727088006C11AC /* ANF Code Test */ = {
 			isa = PBXGroup;
 			children = (
-				3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */,
+				0CE049A82EB1F95C006BAD0C /* DependencyInjection */,
+				0CE049A72EB1F4EA006BAD0C /* View */,
+				0CE049A42EB1F4C3006BAD0C /* ViewModel */,
+				0CE049A32EB1F4AF006BAD0C /* Service */,
+				0CE049A22EB1F477006BAD0C /* Model */,
 				3E727ED226727088006C11AC /* AppDelegate.swift */,
 				3E727ED426727088006C11AC /* SceneDelegate.swift */,
-				3E727ED826727088006C11AC /* Main.storyboard */,
 				3E727EDB2672708B006C11AC /* Assets.xcassets */,
 				3E727EDD2672708B006C11AC /* LaunchScreen.storyboard */,
 				3E727EE02672708B006C11AC /* Info.plist */,
 				3E4AB9392676D86100C79456 /* exploreData.json */,
-				0C4AF3662EAFD45E0033E19F /* ProductCard.swift */,
-				0C4AF3682EAFD7410033E19F /* ProductCardService.swift */,
-				0C4AF36A2EAFE8910033E19F /* ExploreContentCell.swift */,
 			);
 			path = "ANF Code Test";
 			sourceTree = "<group>";
@@ -193,7 +236,6 @@
 			files = (
 				3E727EDF2672708B006C11AC /* LaunchScreen.storyboard in Resources */,
 				3E727EDC2672708B006C11AC /* Assets.xcassets in Resources */,
-				3E727EDA26727088006C11AC /* Main.storyboard in Resources */,
 				3E4AB93A2676D86100C79456 /* exploreData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,10 +256,12 @@
 			files = (
 				3E727F03267281F7006C11AC /* ANFExploreCardTableViewController.swift in Sources */,
 				3E727ED326727088006C11AC /* AppDelegate.swift in Sources */,
+				0CE049AA2EB1F998006BAD0C /* AppDependencyContainer.swift in Sources */,
 				3E727ED526727088006C11AC /* SceneDelegate.swift in Sources */,
 				0C4AF3692EAFD7410033E19F /* ProductCardService.swift in Sources */,
 				0C4AF3672EAFD45E0033E19F /* ProductCard.swift in Sources */,
 				0C4AF36B2EAFE8910033E19F /* ExploreContentCell.swift in Sources */,
+				0CE049A62EB1F4E3006BAD0C /* ProductCardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,14 +284,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3E727ED826727088006C11AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3E727ED926727088006C11AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3E727EDD2672708B006C11AC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -382,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RAHE33U4ZS;
@@ -403,6 +440,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RAHE33U4ZS;
